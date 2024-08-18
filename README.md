@@ -26,7 +26,7 @@ This repository contains various animations that can in the future be implemente
 <br>
 
 ## Installation Instructions
-Open the [live page]() or:
+Open the [live page](https://sarafreitas02.github.io/animations/) or:
 1. Clone the repository to your local machine using:
    ```bash
    git clone https://github.com/SaraFreitas02/animations

@@ -1,7 +1,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?&style=flat&logo=css3&logoColor=white) ![Flexbox](https://img.shields.io/badge/Flexbox-1572B6?style=flat&logo=css3&logoColor=white)
 
 # Animations ![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)
-This repository contains various animations that can in the future be implememted into a bigger project.
+This repository contains various animations that can in the future be implemented into a bigger project.
 
 | Section                     | Link                                      |
 |-----------------------------|-------------------------------------------|

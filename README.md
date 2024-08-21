@@ -22,6 +22,7 @@ This repository contains various animations that can in the future be implemente
 
 ## Features
 - **Grow on Hover**: Item grows when hovered over.
+- **Card Rotation with Change of Content**: See the back of the card on hover.
 
 <br>
 

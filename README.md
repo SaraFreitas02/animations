@@ -6,8 +6,8 @@
 This repository contains various animations that can in the future be implemented into a bigger project.
 
 
-| Section                     | Link                                      |
----|
+| Section                      |   Link                                    |
+|------------------------------|-------------------------------------------|
 | 🎯 **Goal**                 | [Goal](#goal)                             |
 | 📁 **Project Files**        | [Project Files](#project-files)           |
 | ✨ **Features**              | [Features](#features)                     |
@@ -49,7 +49,7 @@ If a browser is not listed below, it has not been tested yet.
 <br>
 
 | **Browser**        | **Compatibility**  |
---|
+|--------------------|--------------------|
 | **Google Chrome** | ✅ Full            |
 | **Microsoft Edge**| ✅ Full            |
 | **Mozilla Firefox**| ✅ Full           |

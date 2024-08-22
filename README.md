@@ -13,11 +13,13 @@ This repository contains various animations that can in the future be implemente
 | 📜 **License**              | [License](#license)                       |
 
 <br>
+<br>
 
 ## Project Files
 - **[index.html](index.html)**: The main HTML file responsible for content display.
 - **[style.css](style.css)**: Contains the styles that determine the appearance of the webpage and animations.
 
+<br>
 <br>
 
 ## Features
@@ -25,6 +27,39 @@ This repository contains various animations that can in the future be implemente
 - **Card Rotation with Change of Content**: When hovering over the card, it turns around showing its back that contains more information.
 - **Dynamic Input Field**: Label moves up to create space for the user information when the input is focused. When unfocused, if the input contains text, the label stays up and if the input is empty, the label goes back to its original position.
 
+<br>
+<br>
+
+## Browser Compatibility
+*Last update: 22-08-2024 22h02*
+
+<br>
+
+To better evaluate each of the browsers, there is three different levels of compatibility: 
+- All the features work as expected: ✅ 
+
+All the features must run smoothly.
+- Some of the features work as expected: 🟡 
+
+At least one of the features does not run as expected.
+- None of the feature work as expected: ❌
+
+None of the features work.
+
+<br>
+
+| **Browser**    | **Status** |
+| -------------- | ---------- |
+| Google Chrome  | ✅         |
+| Microsoft Edge | ✅         |
+| Firefox        | ✅         |
+| Opera          | ✅         |
+
+<br>
+
+If a browser is not displayed in the table above, it means it has not yet been tested.
+
+<br>
 <br>
 
 ## Installation Instructions
@@ -38,10 +73,12 @@ Open the [live page](https://sarafreitas02.github.io/animations/) or:
 3. Open each respective `index.html` in your preferred web browser to view the webpage.
 
 <br>
+<br>
 
 ## Usage Instructions
 Interact with each item to explore the animations.
 
+<br>
 <br>
 
 ## License

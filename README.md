@@ -21,8 +21,9 @@ This repository contains various animations that can in the future be implemente
 <br>
 
 ## Features
-- **Grow on Hover**: Item grows when hovered over.
-- **Card Rotation with Change of Content**: See the back of the card on hover.
+- **Grow on Hover**: When an item is hovered over, it grows while the others are shrinked.
+- **Card Rotation with Change of Content**: When hovering over the card, it turns around showing its back that contains more information.
+- **Dynamic Input Field**: Label moves up to create space for the user information when the input is focused. When unfocused, if the input contains text, the label stays up and if the input is empty, the label goes back to its original position.
 
 <br>
 

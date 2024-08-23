@@ -35,7 +35,7 @@ This repository contains various animations that can in the future be implemente
 
 ## Browser Compatibility
 
-*Last updated: 22-Aug-2024, 22:02*
+*Last updated: 23-Aug-2024, 07:08*
 
 
 To evaluate browser compatibility, three levels are used:
@@ -50,10 +50,11 @@ If a browser is not listed below, it has not been tested yet.
 
 | **Browser**        | **Compatibility**  |
 |--------------------|--------------------|
-| **Google Chrome** | ✅ Full            |
-| **Microsoft Edge**| ✅ Full            |
-| **Mozilla Firefox**| ✅ Full           |
-| **Opera**         | ✅ Full            |
+| **Google Chrome**  | ✅                 |
+| **Microsoft Edge** | ✅                 |
+| **Mozilla Firefox**| ✅                 |
+| **Opera**          | ✅                 |
+| **Safari**         | 🟡                 |
 
 <br>
 

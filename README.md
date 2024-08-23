@@ -3,7 +3,7 @@
 
 # Animations ![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)
 
-This repository contains various animations that can in the future be implemented into a bigger project.
+This repository consists of a playground to practice animations. Currently, it is not part of the goal to make this page aesthetically pleasing but rather just showcase the core of each of the animations.
 
 
 | Section                      |   Link                                    |

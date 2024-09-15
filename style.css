@@ -1,4 +1,5 @@
 /*Grow on Hover*/
+/*giving different colors to each card so the animation is clearer (optional)*/
 #box div:nth-child(1) {
   background-color: red;
 }
@@ -15,37 +16,43 @@
   background-color: blue;
 }
 
+/*main container*/
 #box {
-  width: 80%;
-  display: flex;
+  display: flex; /*necessary (because it is an animation based on flexbox)*/
+  width: 80%; /*necessary (adapt it as you wish)*/
 }
 
+/*cards (main container's children)*/
 #box div {
+  position: relative;
+  width: 10%; /*necessary (adapt it as you wish)*/
+  height: 200px;
+  flex: 1px; /*necessary (adapt it as you wish)*/
+  transition: 0.5s ease-in-out; /*recommended - makes the animation smooth (adapt it as you wish)*/
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
   border: none;
-  flex: 1px;
-  position: relative;
-  transition: 0.5s ease-in-out;
-  width: 10%;
-  height: 200px;
 }
 
+/*cards hover*/
 #box div:hover {
-  flex-grow: 3;
   cursor: pointer;
+  flex: 3; /*necessary - should be a greater value than the first*/
 }
+
+/*-----------------------------------------------*/
 
 /*Card Rotation with Content Change*/
+/*main container*/
 #card {
-  position: relative;
-  width: 150px;
-  height: 150px;
+  position: relative; /*necessary*/
+  width: 150px; /*necessary (adapt it as you wish)*/
+  height: 150px; /*necessary (adapt it as you wish)*/
   background-color: pink;
   border-radius: 10px;
   box-shadow: 0px 2px 5px black;
-  transform-style: preserve-3d;
-  transition: all 1s ease-in-out;
+  transform-style: preserve-3d; /*necessary - makes the card act as a 3d object*/
+  transition: all 1s ease-in-out; /*necessary - sets the animation (adapt as you wish)*/
 }
 
 #card p {

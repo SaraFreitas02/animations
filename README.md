@@ -29,6 +29,7 @@ This repository consists of a playground to practice animations. Currently, it i
 - **Grow on Hover**: When an item is hovered over, it grows while the others are shrinked.
 - **Card Rotation with Change of Content**: When hovering over the card, it turns around showing its back that contains more information.
 - **Dynamic Input Field**: Label moves up to create space for the user information when the input is focused. When unfocused, if the input contains text, the label stays up and if the input is empty, the label goes back to its original position.
+- **Card Slide on Click**: Two clickable cards are diplayed. When one of them is clicked, a sliding card moves (overlaping it) to highlight the respective selected card, and more info is shown inside it.  
 
 <br>
 <br>

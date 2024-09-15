@@ -60,7 +60,7 @@ If a browser is not listed below, it has not been tested yet.
 
 ### Notes:
 1. This table will be updated regularly as more browsers are tested.
-2. If you encounter issues in a browser not listed, please report it.
+2. If you encounter issues in a browser (listed or not listed), please report it.
 
 <br>
 <br>

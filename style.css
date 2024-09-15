@@ -1,4 +1,5 @@
-/*Grow on Hover*/
+/* --------------------------------  Grow on Hover -----------------------------------------*/
+
 /*giving different colors to each card so the animation is clearer (optional)*/
 #box div:nth-child(1) {
   background-color: red;
@@ -18,17 +19,17 @@
 
 /*main container*/
 #box {
-  display: flex; /*necessary (because it is an animation based on flexbox)*/
-  width: 80%; /*necessary (adapt it as you wish)*/
+  display: flex; /*necessary because it is an animation based on flexbox*/
+  width: 80%; /*necessary but adaptable*/
 }
 
 /*cards (main container's children)*/
 #box div {
   position: relative;
-  width: 10%; /*necessary (adapt it as you wish)*/
+  width: 10%; /*necessary but adaptable - the cards' width should be specified but you can choose the size yourself*/
   height: 200px;
-  flex: 1px; /*necessary (adapt it as you wish)*/
-  transition: 0.5s ease-in-out; /*recommended - makes the animation smooth (adapt it as you wish)*/
+  flex: 1px; /*sets the base for the animation*/
+  transition: 0.5s ease-in-out; /*recommended - makes the animation smooth (adaptable)*/
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
   border: none;
@@ -37,55 +38,62 @@
 /*cards hover*/
 #box div:hover {
   cursor: pointer;
-  flex: 3; /*necessary - should be a greater value than the first*/
+  flex: 3; /*sets the 'growth' - should be a greater value than the first*/
 }
 
-/*-----------------------------------------------*/
 
-/*Card Rotation with Content Change*/
+
+
+
+/* -------------------------- Card Rotation with Content Change ---------------------------*/
+
 /*main container*/
 #card {
-  position: relative; /*necessary*/
-  width: 150px; /*necessary (adapt it as you wish)*/
-  height: 150px; /*necessary (adapt it as you wish)*/
+  position: relative; /*necessary for the overlap*/
+  width: 150px; /*necessary but adaptable*/
+  height: 150px; /*necessary but adaptable*/
   background-color: pink;
   border-radius: 10px;
   box-shadow: 0px 2px 5px black;
-  transform-style: preserve-3d; /*necessary - makes the card act as a 3d object*/
-  transition: all 1s ease-in-out; /*necessary - sets the animation (adapt as you wish)*/
+  transform-style: preserve-3d; /*makes the card act as a 3d object*/
+  transition: all 1s ease-in-out; /*activates the desired animation (adaptable)*/
 }
 
+/*paragraphs*/
 #card p {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  position: absolute;
-  z-index: 1;
+  position: absolute; /*overlaps both paragraphs*/
   margin: 0;
   font-weight: bold;
   color: black;
-  backface-visibility: hidden;
-  transition: all 0.5s ease-in-out 0.2s;
+  backface-visibility: hidden; /*hides the back-text untill card's back side is on display*/
+  transition: all 0.5s ease-in-out 0.2s; /*makes animation smoother (adaptable)*/
 }
 
+/*initially show first paragraph*/
 #card :first-child {
-  opacity: 1;
-  transform: rotateY(0);
+  opacity: 1; /*show*/
+  transform: rotateY(0); /*set the base rotation (none)*/
 }
 
+/*initially hide second paragraph and mirror it*/
 #card :nth-child(2) {
-  opacity: 0;
-  transform: rotateY(180deg);
+  opacity: 0; /*hide*/
+  transform: rotateY(180deg); /*rotate it around a vertical axis (Y) to mirror it*/
 }
 
+/*start animation on hover*/
 #card:hover {
-  cursor: pointer;
-  transform: rotateY(180deg);
+  cursor: pointer; /*optional and adaptable*/
+  transform: rotateY(180deg); /*necessary - rotate the card to display its back*/
 }
 
-#card:hover :first-child {
+/*hide the first paragraph and show the second*/
+#card:hover :first-child { 
   opacity: 0;
 }
 
@@ -93,123 +101,149 @@
   opacity: 1;
 }
 
-/*Dynamic Input Field*/
+
+
+
+
+/*--------------------------------------- Dynamic Input Field ---------------------------------*/
+
+/*main container*/
 #input-container {
-  position: relative;
-  width: 200px;
+  position: relative; /*necessary for the overlap*/
+  width: 200px; /*necessary (adaptable)*/
   height: fit-content;
   background-color: white;
 }
 
+/*input and label*/
 #input-container input,
 #input-container label {
-  position: absolute;
-  width: 200px;
+  position: absolute; /*overlap them*/
+  width: 200px; /*necessary - should match main container's width*/
   height: 25px;
   margin: 0;
-  background-color: transparent;
+  background-color: transparent; /*makes sure label is visible*/
 }
 
+/*label specific*/
 #input-container label {
-  font-size: 16px;
+  font-size: 16px; /*recommended - set base font size (adaptable)*/
   display: flex;
   align-items: flex-end;
-  z-index: 2;
-  transform: translateY(0);
-  pointer-events: none;
-  transition: all 0.3s ease-in-out;
+  transform: translateY(0); /*sets base placement of the label*/
+  pointer-events: none; /*recommended - blocks user interactions*/
+  transition: all 0.3s ease-in-out; /*makes animation smoother (adaptable)*/
 }
 
+/*input specific*/
 #input-container input {
-  box-sizing: border-box;
-  z-index: 3;
-  border: none;
-  border-bottom: solid 2px black;
+  box-sizing: border-box; /*recommended - improves the alignment with the label*/
+  z-index: 3; /*displays input on top of label (if the input was displayed behind, user interaction would not be possible)*/
+  border: none; /*recommended to enable one line (not box) input*/
+  border-bottom: solid 2px black; /*recommended to enable one line (not box) input*/
 }
 
+/*necessary - hide placeholder*/
 #input-container input::placeholder {
   color: transparent;
 }
 
+/*recommended to enable one line (not box) input - no border on click*/
 #input-container input:focus {
   outline: none;
 }
 
-#input-container input:focus ~ label,
-#input-container input:not(:placeholder-shown) ~ label {
-  transform: translateY(-25px);
-  font-size: 13px;
+/*move the label up*/
+#input-container input:focus ~ label, /*when the input is clicked*/
+#input-container input:not(:placeholder-shown) ~ label { /*and keep it up when there is text inside the input*/
+  transform: translateY(-25px); /*sets the movement*/
+  font-size: 13px; /*recommended - animation looks better if the font size also gets smaller*/
 }
 
+/*move it down when unfocused and there is no text inside the input*/
 #input-container:placeholder-shown ~ label {
-  transform: translateY(0);
-  font-size: 16px;
+  transform: translateY(0); /*sets the movement*/
+  font-size: 16px; /*recommended - back to initial font size*/
 }
 
-/*Card Slide*/
+
+
+
+
+/*----------------------------------------- Card Slide ---------------------------------------*/
+
+/*main container*/
 #cards-container {
+  /*the children must be aligned in a row (achieve it as you prefer)*/
   display: flex;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
+  position: relative; /*necessary for overlap*/
 }
 
+/*moving card*/
 #sliding {
-  position: absolute;
-  z-index: 0;
-  background-color: blue;
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
+  position: absolute; /*overlapwith other children*/
+  background-color: red; /*necessary (adaptable)*/
+  transform: translateX(0); /*set base placement*/
+  transition: transform 0.5s ease-in-out;  /*makes animation smoother (adaptable)*/
 }
 
+/*all cards (children)*/
+#cards-container > * {
+  width: 200px; /*necessary (adaptable)*/
+  height: 200px; /*necessary (adaptable)*/
+}
+
+/*the fixed cards only*/
+#cards-container > *:not(#sliding) {
+  text-align: center;
+  border: solid 2px black;
+  background-color: transparent; /*makes sure sliding card is visible*/
+  z-index: 2; /*makes sure the sliding card is underneath*/
+}
+
+/*set sliding movement when the button is clicked*/
+/*left card - move left*/
 #cards-container > :first-child:focus ~ #sliding,
 #cards-container > :first-child:active ~ #sliding {
   transform: translateX(0);
 }
 
+/*right card - move right*/
 #cards-container > :nth-child(2):focus ~ #sliding,
 #cards-container > :nth-child(2):active ~ #sliding {
-  transform: translateX(200px);
+  transform: translateX(200px); /*should match the width of the cards*/
 }
 
-#cards-container > * {
-  width: 200px;
-  height: 200px;
-  box-sizing: border-box;
-}
-
-#cards-container > *:not(#sliding) {
-  text-align: center;
-  border: solid 2px black;
-  background-color: transparent;
-  z-index: 5;
-}
-
+/*optional - style on hover (adaptable)*/
 #cards-container > *:not(#sliding):hover:not(:active):not(:focus) {
   cursor: pointer;
 }
 
-#cards-container > *:not(#sliding) > :first-child {
-  transform: translateY(20px);
-  transition: transform 0.5s ease-in-out 0.1s;
-}
-
-#cards-container > *:not(#sliding):focus > :first-child,
-#cards-container > *:not(#sliding):active > :first-child {
-  transform: translateY(0);
-}
-
+/*show second paragraph on click*/
 #cards-container > *:not(#sliding) > :last-child {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out 0.1s;
+  opacity: 0; /*initially hide it*/
+  transition: opacity 0.5s ease-in-out 0.1s; /*makes animation smooth*/
 }
 
 #cards-container > *:not(#sliding):focus > :last-child,
 #cards-container > *:not(#sliding):active > :last-child {
-  opacity: 1;
+  opacity: 1; /*show it when its respective button is clicked*/
 }
 
-/*-----*/
+/*recommended - align first paragraph depending on if the second is shown or not*/
+#cards-container > *:not(#sliding) > :first-child {
+  transform: translateY(20px); /*set 1st paragraph's initial placement*/
+  transition: transform 0.5s ease-in-out 0.1s; /*smooth its animation*/
+}
+
+#cards-container > *:not(#sliding):focus > :first-child,
+#cards-container > *:not(#sliding):active > :first-child {
+  transform: translateY(0); /*move it up when the other is shown*/
+}
+
+/*---------------------------- IGNORE -> Page Layout (does not interfere with animations) -------------------------*/
 main,
 .animation {
   display: flex;

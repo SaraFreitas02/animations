@@ -41,10 +41,6 @@
   flex: 3; /*sets the 'growth' - should be a greater value than the first*/
 }
 
-
-
-
-
 /* -------------------------- Card Rotation with Content Change ---------------------------*/
 
 /*main container*/
@@ -83,27 +79,27 @@
 /*initially hide second paragraph and mirror it*/
 #card :nth-child(2) {
   opacity: 0; /*hide*/
-  transform: rotateY(180deg); /*rotate it around a vertical axis (Y) to mirror it*/
+  transform: rotateY(
+    180deg
+  ); /*rotate it around a vertical axis (Y) to mirror it*/
 }
 
 /*start animation on hover*/
 #card:hover {
   cursor: pointer; /*optional and adaptable*/
-  transform: rotateY(180deg); /*necessary - rotate the card to display its back*/
+  transform: rotateY(
+    180deg
+  ); /*necessary - rotate the card to display its back*/
 }
 
 /*hide the first paragraph and show the second*/
-#card:hover :first-child { 
+#card:hover :first-child {
   opacity: 0;
 }
 
 #card:hover :nth-child(2) {
   opacity: 1;
 }
-
-
-
-
 
 /*--------------------------------------- Dynamic Input Field ---------------------------------*/
 
@@ -155,7 +151,8 @@
 
 /*move the label up*/
 #input-container input:focus ~ label, /*when the input is clicked*/
-#input-container input:not(:placeholder-shown) ~ label { /*and keep it up when there is text inside the input*/
+#input-container input:not(:placeholder-shown) ~ label {
+  /*and keep it up when there is text inside the input*/
   transform: translateY(-25px); /*sets the movement*/
   font-size: 13px; /*recommended - animation looks better if the font size also gets smaller*/
 }
@@ -165,10 +162,6 @@
   transform: translateY(0); /*sets the movement*/
   font-size: 16px; /*recommended - back to initial font size*/
 }
-
-
-
-
 
 /*----------------------------------------- Card Slide ---------------------------------------*/
 
@@ -186,7 +179,7 @@
   position: absolute; /*overlapwith other children*/
   background-color: red; /*necessary (adaptable)*/
   transform: translateX(0); /*set base placement*/
-  transition: transform 0.5s ease-in-out;  /*makes animation smoother (adaptable)*/
+  transition: transform 0.5s ease-in-out; /*makes animation smoother (adaptable)*/
 }
 
 /*all cards (children)*/
@@ -241,6 +234,115 @@
 #cards-container > *:not(#sliding):focus > :first-child,
 #cards-container > *:not(#sliding):active > :first-child {
   transform: translateY(0); /*move it up when the other is shown*/
+}
+
+/*---------------------------- Line Animation on Button Hover/Click ---------------------------------*/
+#line-btns-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 40% !important;
+}
+
+#btns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btns-container button {
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50% !important;
+  outline: none;
+  transition: all 0.5s linear;
+  padding: 10px;
+}
+
+#btn2:hover,
+#btn2:focus,
+#btn2:active,
+#btn1:hover,
+#btn1:focus,
+#btn1:active {
+  font-weight: bold;
+}
+
+#line {
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(
+    -128deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0, 0, 0, 1) 50%
+  );
+  transition: all 0.5s ease-in-out;
+  transform: translateX(0);
+}
+
+#btns-container:has(#btn2:focus) ~ #line,
+#btns-container:has(#btn2:active) ~ #line,
+#btns-container:has(#btn2:hover) ~ #line {
+  transform: translateX(100%);
+  outline: none;
+  animation: background-change-right 0.5s linear forwards;
+}
+
+#btns-container:has(#btn1:focus) ~ #line,
+#btns-container:has(#btn1:active) ~ #line,
+#btns-container:has(#btn1:hover) ~ #line {
+  transform: translateX(0);
+  outline: none;
+  animation: background-change-left 0.5s linear forwards;
+}
+
+
+@keyframes background-change-right {
+  0% {
+    background: black;
+  }
+
+  5% {
+    background: linear-gradient(
+      128deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(0, 0, 0, 1) 60%
+    );
+  }
+
+  100% {
+    background: linear-gradient(
+      128deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(0, 0, 0, 1) 50%
+    );
+  }
+}
+
+@keyframes background-change-left {
+  0% {
+    background: black;
+  }
+
+  5% {
+    background: linear-gradient(
+      -128deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(0, 0, 0, 1) 60%
+    );
+  }
+
+  100% {
+    background: linear-gradient(
+      -128deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(0, 0, 0, 1) 50%
+    );
+  }
 }
 
 /*---------------------------- IGNORE -> Page Layout (does not interfere with animations) -------------------------*/
